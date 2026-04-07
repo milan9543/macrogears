@@ -1,15 +1,14 @@
 / {
-    buttons {
-        compatible = "gpio-keys";
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
 
-        key0: key_0 {
-            gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-            label = "KEY 0";
-        };
+        input-gpios = <
+            &gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)
+            &gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)
+        >;
+    };
 
-        key1: key_1 {
-            gpios = <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-            label = "KEY 1";
-        };
+    chosen {
+        zmk,kscan = &kscan0;
     };
 };
