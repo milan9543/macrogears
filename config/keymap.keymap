@@ -1,0 +1,22 @@
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_pair {
+            timeout-ms = <5000>;
+            key-positions = <0 1>;
+            bindings = <&bt BT_CLR>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp I
+                &kp K
+            >;
+        };
+    };
+};
