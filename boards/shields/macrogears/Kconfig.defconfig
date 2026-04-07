@@ -1,0 +1,6 @@
+if SHIELD_MACROGEARS
+
+config ZMK_KEYBOARD_NAME
+    default "MacroGears"
+
+endif # SHIELD_MACROGEARS
