@@ -1,0 +1,26 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        /* Press both keys simultaneously to clear bonds & enter pairing mode */
+        combo_bt_clear {
+            timeout-ms = <100>;
+            key-positions = <0 1>;
+            bindings = <&bt BT_CLR>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = 
+                &kp I  &kp K
+            >;
+        };
+    };
+};

@@ -1,0 +1,20 @@
+/* Pin overlay for 2-button macro pad on nRF52840 Supermini (nice!nano pinout)
+ * Adjust &gpio0 pin numbers to match YOUR wiring.
+ * Defaults: Button 0 → P0.02 (D0), Button 1 → P0.03 (D1)
+ * Connect the other leg of each switch to GND.
+ */
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-direct";
+        label = "KSCAN";
+
+        input-gpios =
+            <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* Button 0 – "I" */
+            <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  /* Button 1 – "K" */
+    };
+};
